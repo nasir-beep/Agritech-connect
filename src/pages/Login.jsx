@@ -39,7 +39,7 @@ function Login() {
 
         <div className="text-center mb-8">
           <Link to="/" className="text-4xl font-bold text-primary">
-            AgriConnect
+            Agritech Connect
           </Link>
         </div>
 

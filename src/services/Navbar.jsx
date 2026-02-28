@@ -67,7 +67,7 @@ function Navbar() {
             >
               <span className="mr-2"></span>
               <span className="hidden xs:inline">Agritech Connect</span>
-              <span className="xs:hidden">AC</span>
+              <span className="xs:hidden"></span>
             </Link>
 
             <div className="hidden md:flex items-center space-x-6">
