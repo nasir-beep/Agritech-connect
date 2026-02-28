@@ -1,16 +1,57 @@
-# React + Vite
+# Agritech Connect
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern agricultural technology platform that connects farmers to markets, knowledge, weather insights, and expert support. Built with React and Tailwind CSS, Agritech Connect delivers a responsive, user-friendly digital experience for the agricultural community.
 
-Currently, two official plugins are available:
+# Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+AgriTech-Connect is a frontend-focused web application designed to empower farmers through digital tools and smart integrations. The platform supports learning, trading, mentorship and data-driven decision making in one unified interface.
 
-## React Compiler
+# Key Features
+- User Authentication with protected routes
+- Marketplace for buying and selling agricultural products
+- Weather Updates via OpenWeatherMap API
+- Crop Disease Detection - image diagnosis
+- Learning Hub with embedded video tutorials
+- Mentorship Network connecting farmers with experts
+- Community Forum for discussion and knowledge sharing
+- Farm Analytics Dashboard with interactive charts
+- Fully Responsive Design - mobile first approach
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+# Frontend
+- React
+- Vite
+- React Router DOM
+- Tailwind CSS
+- Recharts
+- Axios
+- Framer Motion
 
-## Expanding the ESLint configuration
+# APIs
+- OpenWeatherMap API
+- YouTube Embed API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tools
+- Git
+
+## Installation
+# Clone the repository
+git clone https://github.com/nasir-beep/Agritech-connect.git
+
+# Navigate into the project folder
+cd agritech-connect
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+## Responsiveness
+Agritech Connect follows a mobile first design approach and is optimized for desktop, tablet and mobile devices.
+
+## Contributing
+Contributions are welcome. Please fork the repository and submit a pull request with clear documentation of changes. Thank You
+
+## License
+This project is licensed under the MIT License.
