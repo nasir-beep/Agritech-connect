@@ -18,19 +18,16 @@ export default function WeatherCard({ city = "Benoni" }) {
   const [usingLocation, setUsingLocation] = useState(false);
   const [lastUpdated, setLastUpdated] = useState(null);
 
-  // Fetch weather data
   const fetchWeatherData = async (cityName) => {
     setLoading(true);
     setError(null);
 
     try {
-      // Get current weather
       const weatherResult = await getCurrentWeather(cityName);
       
       if (weatherResult.success) {
         setWeather(weatherResult.data);
         
-        // Get forecast
         const forecastResult = await getForecast(cityName);
         if (forecastResult.success) {
           setForecast(forecastResult.data);
@@ -47,7 +44,6 @@ export default function WeatherCard({ city = "Benoni" }) {
     }
   };
 
-  // Get weather for user's location
   const getLocationWeather = () => {
     setUsingLocation(true);
     setError(null);
@@ -84,14 +80,12 @@ export default function WeatherCard({ city = "Benoni" }) {
     }
   };
 
-  // Load weather when city changes
   useEffect(() => {
     if (!usingLocation) {
       fetchWeatherData(city);
     }
   }, [city, usingLocation]);
 
-  // Handle search
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchCity.trim()) {
@@ -101,13 +95,11 @@ export default function WeatherCard({ city = "Benoni" }) {
     }
   };
 
-  // Format date
   const formatDay = (timestamp) => {
     const date = new Date(timestamp * 1000);
     return date.toLocaleDateString('en-US', { weekday: 'short' });
   };
 
-  // Loading state
   if (loading) {
     return (
       <div className="card text-center py-12">
@@ -117,7 +109,6 @@ export default function WeatherCard({ city = "Benoni" }) {
     );
   }
 
-  // Error state with demo data
   if (error || !weather) {
     return (
       <div className="card">
@@ -125,8 +116,7 @@ export default function WeatherCard({ city = "Benoni" }) {
           <p className="text-red-500 mb-2">{error || "Unable to load weather"}</p>
           <p className="text-sm text-gray-500">Showing demo data</p>
         </div>
-        
-        {/* Demo Weather */}
+
         <div className="text-center">
           <div className="text-6xl mb-4">☀️</div>
           <p className="text-4xl font-bold text-primary mb-2">24°C</p>
@@ -134,7 +124,6 @@ export default function WeatherCard({ city = "Benoni" }) {
           <p className="text-sm text-gray-500">Benoni, South Africa</p>
         </div>
 
-        {/* Demo Forecast */}
         <div className="grid grid-cols-5 gap-2 mt-6 pt-6 border-t">
           {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, i) => (
             <div key={i} className="text-center">
@@ -155,10 +144,8 @@ export default function WeatherCard({ city = "Benoni" }) {
     );
   }
 
-  // Success state - real weather data
   return (
     <div className="card">
-      {/* Header with location and refresh */}
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-lg font-bold flex items-center">
@@ -180,7 +167,6 @@ export default function WeatherCard({ city = "Benoni" }) {
         </button>
       </div>
 
-      {/* Search Bar */}
       <form onSubmit={handleSearch} className="mb-6">
         <div className="flex gap-2">
           <input
@@ -196,7 +182,6 @@ export default function WeatherCard({ city = "Benoni" }) {
         </div>
       </form>
 
-      {/* Quick Cities */}
       <div className="mb-6">
         <p className="text-sm font-semibold mb-2">Popular Cities:</p>
         <div className="flex flex-wrap gap-2">
@@ -221,7 +206,6 @@ export default function WeatherCard({ city = "Benoni" }) {
         </div>
       </div>
 
-      {/* Current Weather */}
       <div className="flex items-center justify-between mb-6">
         <div>
           <p className="text-5xl font-bold text-primary">
@@ -242,8 +226,7 @@ export default function WeatherCard({ city = "Benoni" }) {
           />
         </div>
       </div>
-
-      {/* Weather Details Grid */}
+      
       <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
         <div className="bg-gray-50 p-3 rounded-lg">
           <p className="text-gray-500">Humidity</p>

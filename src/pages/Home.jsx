@@ -13,7 +13,7 @@ function Home() {
   ];
 
   const features = [
-    { icon: "🌾", title: "Smart Marketplace", desc: "Buy and sell farm products directly with fair prices" },
+    { icon: "🌾", title: "Online Marketplace", desc: "Buy and sell farm products directly with fair prices" },
     { icon: "📚", title: "Learning Hub", desc: "Access modern farming techniques and best practices" },
     { icon: "🤝", title: "Expert Mentorship", desc: "Connect with experienced agricultural experts" },
   ];
@@ -46,39 +46,32 @@ function Home() {
           <div className="container mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Impact</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {stats.map((stat, index) => (
-                <StatCard key={index} title={stat.title} value={stat.value} />
+              {stats.map((stat) => (
+                <StatCard key={stat.id} title={stat.title} value={stat.value} />
               ))}
             </div>
           </div>
-        </section>
+          </section>
 
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Why Choose Us</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              <div key={index} className="card text-center p-6">
-                <div className="text-4xl md:text-5xl mb-4">🌾</div>
-                <h3 className="text-lg md:text-xl font-bold mb-2">Online Marketplace</h3>
-                <p className="text-sm md:text-base text-gray-600">Buy and sell farm products directly with fair prices</p>
-              </div>
-              <div key={index} className="card text-center p-6">
-                <div className="text-4xl md:text-5xl mb-4">📚</div>
-                <h3 className="text-lg md:text-xl font-bold mb-2">Learning Hub</h3>
-                <p className="text-sm md:text-base text-gray-600">Access modern farming techniques and best practices</p>
-              </div>
-              <div key={index} className="card text-center p-6">
-                <div className="text-4xl md:text-5xl mb-4">🤝</div>
-                <h3 className="text-lg md:text-xl font-bold mb-2">Expert Mentorship</h3>
-                <p className="text-sm md:text-base text-gray-600">Connect with experienced agricultural experts</p>
-              </div>
+              {features.map((feature) => (
+                <div key={feature.id} className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                  <div className="text-4xl md:text-5xl mb-4">{feature.icon}</div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2">{feature.title}</h3>
+                  <p className="text-sm md:text-base text-gray-600">{feature.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
+
         <section className="py-12 md:py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-md mx-auto w-full">
+            <div className="max-w-md mx-auto">
               <WeatherCard />
             </div>
           </div>
@@ -89,5 +82,5 @@ function Home() {
     </div>
   );
 }
-
+        
 export default Home;
