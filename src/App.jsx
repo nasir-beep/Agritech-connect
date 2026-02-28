@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+import Home from "./pages/Home";
+import Marketplace from "./pages/Marketplace";
+import Weather from "./pages/Weather";
+import Learning from "./pages/Learning";
+import CropDiagnosis from "./pages/CropDiagnosis";
+import Mentorship from "./pages/Mentorship";
+import Community from "./pages/Community";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+
+      <Route path="/marketplace" element={
+        <ProtectedRoute>
+          <Marketplace />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/weather" element={
+        <ProtectedRoute>
+          <Weather />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/learning" element={
+        <ProtectedRoute>
+          <Learning />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/crop-diagnosis" element={
+        <ProtectedRoute>
+          <CropDiagnosis />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/mentorship" element={
+        <ProtectedRoute>
+          <Mentorship />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/community" element={
+        <ProtectedRoute>
+          <Community />
+        </ProtectedRoute>
+      } />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
