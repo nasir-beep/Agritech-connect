@@ -8,6 +8,7 @@ function CropDiagnosis() {
   const [diagnosis, setDiagnosis] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  // Handle image upload
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -17,6 +18,7 @@ function CropDiagnosis() {
     }
   };
 
+  // Simulate diagnosis (in real app, this would call an AI API)
   const analyzeImage = () => {
     if (!selectedImage) {
       alert("Please upload an image first");
@@ -25,8 +27,9 @@ function CropDiagnosis() {
 
     setLoading(true);
 
+    // Simulate API call delay
     setTimeout(() => {
-
+      // Mock diagnosis results
       const diseases = [
         {
           name: "Early Blight",
@@ -72,7 +75,7 @@ function CropDiagnosis() {
         <h1 className="text-3xl font-bold text-primary mb-8">Crop Disease Diagnosis</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
-
+          {/* Upload Section */}
           <div className="card">
             <h2 className="text-xl font-bold mb-4">Upload Crop Image</h2>
             
@@ -90,7 +93,8 @@ function CropDiagnosis() {
                       setPreview(null);
                       setDiagnosis(null);
                     }}
-                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full w-8 h-8 flex items-center justify-center">
+                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full w-8 h-8 flex items-center justify-center"
+                  >
                     ✕
                   </button>
                 </div>
@@ -127,6 +131,7 @@ function CropDiagnosis() {
             )}
           </div>
 
+          {/* Results Section */}
           <div className="card">
             <h2 className="text-xl font-bold mb-4">Diagnosis Results</h2>
             
@@ -166,7 +171,8 @@ function CropDiagnosis() {
                     setPreview(null);
                     setDiagnosis(null);
                   }}
-                  className="btn-primary w-full">
+                  className="btn-primary w-full"
+                >
                   Analyze Another Image
                 </button>
               </div>
@@ -181,8 +187,9 @@ function CropDiagnosis() {
           </div>
         </div>
 
+        {/* Tips Section */}
         <div className="mt-8 bg-blue-50 rounded-lg p-6">
-          <h2 className="text-xl font-bold mb-4">Tips for Better Diagnosis</h2>
+          <h2 className="text-xl font-bold mb-4">📋 Tips for Better Diagnosis</h2>
           <ul className="space-y-2 text-gray-700">
             <li>• Take clear, well-lit photos of the affected area</li>
             <li>• Include both healthy and diseased parts for comparison</li>

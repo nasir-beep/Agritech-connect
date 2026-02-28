@@ -80,6 +80,7 @@ function Mentorship() {
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-primary mb-8">Find a Mentor</h1>
 
+        {/* Search Bar */}
         <div className="max-w-md mb-8">
           <input
             type="text"
@@ -90,6 +91,7 @@ function Mentorship() {
           />
         </div>
 
+        {/* Mentors Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredMentors.map((mentor) => (
             <div key={mentor.id} className="relative">
@@ -124,6 +126,7 @@ function Mentorship() {
           </p>
         )}
 
+        {/* How it works */}
         <div className="mt-12 bg-green-50 rounded-lg p-6">
           <h2 className="text-xl font-bold mb-4">How Mentorship Works</h2>
           <div className="grid md:grid-cols-3 gap-6">

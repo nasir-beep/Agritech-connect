@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { AuthContext } from "../context/AuthContext";  
+import { AuthContext } from "../components/AuthContext";
 import NavbarCard from "../components/NavbarCard";
 
 function Navbar() {
@@ -29,8 +29,10 @@ function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold">
+            🌱 AgriConnect
           </Link>
 
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
             {navLinks.map((link) => (
               <Link
@@ -43,6 +45,7 @@ function Navbar() {
             ))}
           </div>
 
+          {/* Right side - Auth */}
           <div className="flex items-center space-x-4">
             {user ? (
               <NavbarCard user={user} onLogout={handleLogout} />
@@ -50,17 +53,20 @@ function Navbar() {
               <div className="space-x-2">
                 <Link
                   to="/login"
-                  className="px-4 py-2 bg-white text-primary rounded-lg hover:bg-gray-100">
+                  className="px-4 py-2 bg-white text-primary rounded-lg hover:bg-gray-100"
+                >
                   Login
                 </Link>
                 <Link
                   to="/register"
-                  className="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-green-600">
+                  className="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-green-600"
+                >
                   Register
                 </Link>
               </div>
             )}
 
+            {/* Mobile menu button */}
             <button
               className="md:hidden text-2xl"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -70,6 +76,7 @@ function Navbar() {
           </div>
         </div>
 
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-green-600">
             {navLinks.map((link) => (
@@ -88,5 +95,4 @@ function Navbar() {
     </nav>
   );
 }
-
 export default Navbar;

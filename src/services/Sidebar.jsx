@@ -4,7 +4,7 @@ function Sidebar() {
   const location = useLocation();
 
   const menuItems = [
-    { icon: "🏠", name: "Home", path: "/" },
+    { icon: "🏠", name: "Dashboard", path: "/" },
     { icon: "🛒", name: "Marketplace", path: "/marketplace" },
     { icon: "📚", name: "Learning", path: "/learning" },
     { icon: "🔍", name: "Crop Diagnosis", path: "/crop-diagnosis" },
@@ -13,6 +13,7 @@ function Sidebar() {
     { icon: "☁️", name: "Weather", path: "/weather" },
   ];
 
+  // Check if current path matches menu item
   const isActive = (path) => {
     return location.pathname === path;
   };
@@ -30,7 +31,8 @@ function Sidebar() {
                 isActive(item.path)
                   ? "bg-primary text-white"
                   : "hover:bg-gray-100"
-              }`}>
+              }`}
+            >
               <span className="text-xl">{item.icon}</span>
               <span>{item.name}</span>
             </Link>

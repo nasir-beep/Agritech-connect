@@ -6,8 +6,7 @@ function ProductCard({ name, price, onAddToCart }) {
       </div>
       <h3 className="font-bold text-lg mb-1">{name}</h3>
       <p className="text-primary font-bold text-xl mb-4">R {price}</p>
-      <button 
-        onClick={onAddToCart}
+      <button onClick={onAddToCart}
         className="btn-primary w-full"
       >
         Add to Cart

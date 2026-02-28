@@ -85,11 +85,12 @@ function Learning() {
         <h1 className="text-3xl font-bold text-primary mb-8">Learning Hub</h1>
 
         {selectedCourse ? (
-
+          // Course Detail View
           <div>
             <button
               onClick={() => setSelectedCourse(null)}
-              className="mb-6 text-primary hover:underline">
+              className="mb-6 text-primary hover:underline"
+            >
               ← Back to Courses
             </button>
             
@@ -122,7 +123,7 @@ function Learning() {
             </div>
           </div>
         ) : (
-
+          // Course Grid View
           <div className="grid md:grid-cols-2 gap-6">
             {courses.map((course) => (
               <div key={course.id} className="card cursor-pointer hover:shadow-xl transition"

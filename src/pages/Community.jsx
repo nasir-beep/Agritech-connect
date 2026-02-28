@@ -64,6 +64,7 @@ function Community() {
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-primary mb-8">Community Forum</h1>
 
+        {/* Create Post */}
         <div className="card mb-8">
           <form onSubmit={handleCreatePost}>
             <textarea
@@ -79,6 +80,7 @@ function Community() {
           </form>
         </div>
 
+        {/* Posts Feed */}
         <div className="space-y-6">
           {posts.map((post) => (
             <PostCard

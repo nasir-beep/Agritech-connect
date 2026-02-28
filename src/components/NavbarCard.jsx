@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../components/AuthContext";
 
 function NavbarCard({ user, onLogout }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -8,28 +9,32 @@ function NavbarCard({ user, onLogout }) {
 
   return (
     <div className="relative">
-
+      {/* User button */}
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="flex items-center space-x-2 bg-white text-primary px-3 py-1 rounded-lg">
+        className="flex items-center space-x-2 bg-white text-primary px-3 py-1 rounded-lg"
+      >
         <span className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center">
-          {user.name ? user.name.charAt(0).toUpperCase() : ""}
+          {user.name ? user.name.charAt(0) : "U"}
         </span>
         <span className="hidden md:inline">{user.name || "User"}</span>
       </button>
 
+      {/* Dropdown menu */}
       {showMenu && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
           <Link
             to="/profile"
             className="block px-4 py-2 hover:bg-gray-100"
-            onClick={() => setShowMenu(false)}>
+            onClick={() => setShowMenu(false)}
+          >
             Profile
           </Link>
           <Link
             to="/settings"
             className="block px-4 py-2 hover:bg-gray-100"
-            onClick={() => setShowMenu(false)}>
+            onClick={() => setShowMenu(false)}
+          >
             Settings
           </Link>
           <hr className="my-2" />
@@ -38,7 +43,8 @@ function NavbarCard({ user, onLogout }) {
               onLogout();
               setShowMenu(false);
             }}
-            className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">
+            className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
+          >
             Logout
           </button>
         </div>

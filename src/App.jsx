@@ -1,34 +1,63 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./services/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+// Pages
 import Home from "./pages/Home";
+import Marketplace from "./pages/Marketplace";
+import Weather from "./pages/Weather";
+import Learning from "./pages/Learning";
+import CropDiagnosis from "./pages/CropDiagnosis";
+import Mentorship from "./pages/Mentorship";
+import Community from "./pages/Community";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-
-// Simple home page
-function Home() {
-  return (
-    <div>
-      <Navbar />
-      <div className="container mx-auto p-8 text-center">
-        <h1 className="text-4xl font-bold text-primary mb-4">
-          Welcome to Agritech-Connect
-        </h1>
-        <p className="text-gray-600">
-          Your app is now working! Let's add more features.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 function App() {
   return (
     <Routes>
+      {/* Public Routes */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      
+      {/* Protected Routes */}
+      <Route path="/marketplace" element={
+        <ProtectedRoute>
+          <Marketplace />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/weather" element={
+        <ProtectedRoute>
+          <Weather />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/learning" element={
+        <ProtectedRoute>
+          <Learning />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/crop-diagnosis" element={
+        <ProtectedRoute>
+          <CropDiagnosis />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/mentorship" element={
+        <ProtectedRoute>
+          <Mentorship />
+        </ProtectedRoute>
+      } />
+      
+      <Route path="/community" element={
+        <ProtectedRoute>
+          <Community />
+        </ProtectedRoute>
+      } />
     </Routes>
   );
 }
 
-export default App
+export default App;
