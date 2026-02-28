@@ -12,6 +12,12 @@ function Home() {
     { title: "Community Posts", value: "2,345" },
   ];
 
+  const features = [
+    { icon: "🌾", title: "Smart Marketplace", desc: "Buy and sell farm products directly with fair prices" },
+    { icon: "📚", title: "Learning Hub", desc: "Access modern farming techniques and best practices" },
+    { icon: "🤝", title: "Expert Mentorship", desc: "Connect with experienced agricultural experts" },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -19,27 +25,27 @@ function Home() {
       <main className="flex-grow">
         <section className="bg-gradient-to-r from-primary to-green-600 text-white py-20">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 px-2">
               Welcome to Agritech Connect
             </h1>
-            <p className="text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-2xl mx-auto px-4">
               Your digital partner in modern farming. Connect, learn and grow with our agricultural community.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/marketplace" className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
+              <Link to="/marketplace" className="btn-primary text-center px-6 py-3 sm:px-8">
                 Start Shopping
               </Link>
-              <Link to="/learning" className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600">
+              <Link to="/learning" className="bg-secondary text-white px-6 py-3 sm:px-8 rounded-lg font-semibold hover:bg-green-600">
                 Start Learning
               </Link>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 md:py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Impact</h2>
-            <div className="grid md:grid-cols-4 gap-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Our Impact</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {stats.map((stat, index) => (
                 <StatCard key={index} title={stat.title} value={stat.value} />
               ))}
@@ -47,32 +53,32 @@ function Home() {
           </div>
         </section>
 
-        <section className="py-16">
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="card text-center">
-                <div className="text-5xl mb-4">🌾</div>
-                <h3 className="text-xl font-bold mb-2">Online Marketplace</h3>
-                <p className="text-gray-600">Buy and sell farm products directly with fair prices</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Why Choose Us</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div key={index} className="card text-center p-6">
+                <div className="text-4xl md:text-5xl mb-4">🌾</div>
+                <h3 className="text-lg md:text-xl font-bold mb-2">Online Marketplace</h3>
+                <p className="text-sm md:text-base text-gray-600">Buy and sell farm products directly with fair prices</p>
               </div>
-              <div className="card text-center">
-                <div className="text-5xl mb-4">📚</div>
-                <h3 className="text-xl font-bold mb-2">Learning Hub</h3>
-                <p className="text-gray-600">Access modern farming techniques and best practices</p>
+              <div key={index} className="card text-center p-6">
+                <div className="text-4xl md:text-5xl mb-4">📚</div>
+                <h3 className="text-lg md:text-xl font-bold mb-2">Learning Hub</h3>
+                <p className="text-sm md:text-base text-gray-600">Access modern farming techniques and best practices</p>
               </div>
-              <div className="card text-center">
-                <div className="text-5xl mb-4">🤝</div>
-                <h3 className="text-xl font-bold mb-2">Expert Mentorship</h3>
-                <p className="text-gray-600">Connect with experienced agricultural experts</p>
+              <div key={index} className="card text-center p-6">
+                <div className="text-4xl md:text-5xl mb-4">🤝</div>
+                <h3 className="text-lg md:text-xl font-bold mb-2">Expert Mentorship</h3>
+                <p className="text-sm md:text-base text-gray-600">Connect with experienced agricultural experts</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 md:py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-md mx-auto">
+            <div className="max-w-md mx-auto w-full">
               <WeatherCard />
             </div>
           </div>
