@@ -5,37 +5,20 @@ import PostCard from "../components/PostCard";
 
 function Community() {
   const [posts, setPosts] = useState([
-    {
-      id: 1,
-      author: "Farmer John",
-      content: "Has anyone tried the new drought-resistant maize variety? Looking for feedback before planting.",
-      time: "2 hours ago",
-      likes: 12,
-      comments: 5
+    { id: 1, author: "Farmer Vilakazi", content: "Has anyone tried the new drought-resistant maize variety? Looking for feedback before planting.",
+      time: "2 hours ago", likes: 12, comments: 5
     },
-    {
-      id: 2,
-      author: "Sarah Green",
-      content: "Just installed a drip irrigation system on my farm. Game changer! Happy to share tips.",
-      time: "5 hours ago",
-      likes: 24,
-      comments: 8
+
+    { id: 2, author: "Ronny Phasha", content: "Just installed a drip irrigation system on my farm. Game changer! Happy to share tips.",
+      time: "5 hours ago", likes: 24, comments: 8
     },
-    {
-      id: 3,
-      author: "AgriExpert",
-      content: "Tip of the day: Test your soil pH before applying fertilizers. It can save you money and improve yields!",
-      time: "1 day ago",
-      likes: 45,
-      comments: 12
+
+    { id: 3, author: "Agritech Expert", content: "Tip of the day: Test your soil pH before applying fertilizers. It can save you money and improve yields!",
+      time: "1 day ago", likes: 45, comments: 12
     },
-    {
-      id: 4,
-      author: "YoungFarmer",
-      content: "Looking for mentorship in organic vegetable farming. Any recommendations?",
-      time: "2 days ago",
-      likes: 18,
-      comments: 7
+
+    { id: 4, author: "Zanele M", content: "Looking for mentorship in organic vegetable farming. Any recommendations?", 
+      time: "2 days ago", likes: 18, comments: 7
     }
   ]);
 
@@ -64,7 +47,6 @@ function Community() {
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold text-primary mb-8">Community Forum</h1>
 
-        {/* Create Post */}
         <div className="card mb-8">
           <form onSubmit={handleCreatePost}>
             <textarea
@@ -80,7 +62,6 @@ function Community() {
           </form>
         </div>
 
-        {/* Posts Feed */}
         <div className="space-y-6">
           {posts.map((post) => (
             <PostCard

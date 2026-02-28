@@ -8,10 +8,6 @@ function MentorCard({ name, expertise, rating, onConnect }) {
         <div>
           <h3 className="font-bold text-lg">{name}</h3>
           <p className="text-gray-600 text-sm">{expertise}</p>
-          <div className="flex items-center mt-1">
-            <span className="text-yellow-500">★</span>
-            <span className="text-sm ml-1">{rating}</span>
-          </div>
         </div>
       </div>
       <button 

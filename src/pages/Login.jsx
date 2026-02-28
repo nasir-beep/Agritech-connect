@@ -16,16 +16,14 @@ function Login() {
     setError("");
     setLoading(true);
 
-    // Simple validation
     if (!email || !password) {
       setError("Please fill in all fields");
       setLoading(false);
       return;
     }
 
-    // Simulate login (in real app, this would call an API)
     setTimeout(() => {
-      // For demo, any email/password works
+
       login({ 
         email, 
         name: email.split('@')[0] 
@@ -38,14 +36,12 @@ function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
       <div className="max-w-md w-full">
-        {/* Logo */}
         <div className="text-center mb-8">
           <Link to="/" className="text-4xl font-bold text-primary">
-            🌱 AgriConnect
+            Agritech Connect
           </Link>
         </div>
 
-        {/* Login Form */}
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h2 className="text-2xl font-bold text-center mb-8">Welcome Back</h2>
 
@@ -96,7 +92,6 @@ function Login() {
             </p>
           </div>
 
-          {/* Demo credentials */}
           <div className="mt-8 p-4 bg-gray-50 rounded-lg">
             <p className="text-sm text-gray-600 mb-2">Demo Credentials:</p>
             <p className="text-xs text-gray-500">Any email/password works for demo</p>

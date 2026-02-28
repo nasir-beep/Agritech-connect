@@ -12,9 +12,9 @@ function PostCard({ author, content, time, likes }) {
       </div>
       <p className="text-gray-700 mb-3">{content}</p>
       <div className="flex items-center space-x-4 text-sm text-gray-500">
-        <button className="hover:text-primary">👍 {likes}</button>
-        <button className="hover:text-primary">💬 Reply</button>
-        <button className="hover:text-primary">↗️ Share</button>
+        <button className="hover:text-primary">Like {likes}</button>
+        <button className="hover:text-primary">Reply </button>
+        <button className="hover:text-primary">Share</button>
       </div>
     </div>
   );

@@ -5,9 +5,8 @@ import StatCard from "../components/StatCard";
 import WeatherCard from "../components/WeatherCard";
 
 function Home() {
-  // Demo stats
   const stats = [
-    { title: "Active Farmers", value: "1,234+" },
+    { title: "Active Farmers", value: "1,234" },
     { title: "Products Available", value: "567" },
     { title: "Expert Mentors", value: "89" },
     { title: "Community Posts", value: "2,345" },
@@ -18,14 +17,13 @@ function Home() {
       <Navbar />
       
       <main className="flex-grow">
-        {/* Hero Section */}
         <section className="bg-gradient-to-r from-primary to-green-600 text-white py-20">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Welcome to AgriTech Connect
+              Welcome to Agritech Connect
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Your digital partner in modern farming. Connect, learn, and grow with our agricultural community.
+              Your digital partner in modern farming. Connect, learn and grow with our agricultural community.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/marketplace" className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100">
@@ -38,7 +36,6 @@ function Home() {
           </div>
         </section>
 
-        {/* Stats Section */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Our Impact</h2>
@@ -50,14 +47,13 @@ function Home() {
           </div>
         </section>
 
-        {/* Features */}
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="card text-center">
                 <div className="text-5xl mb-4">🌾</div>
-                <h3 className="text-xl font-bold mb-2">Smart Marketplace</h3>
+                <h3 className="text-xl font-bold mb-2">Online Marketplace</h3>
                 <p className="text-gray-600">Buy and sell farm products directly with fair prices</p>
               </div>
               <div className="card text-center">
@@ -74,7 +70,6 @@ function Home() {
           </div>
         </section>
 
-        {/* Weather Widget */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="max-w-md mx-auto">

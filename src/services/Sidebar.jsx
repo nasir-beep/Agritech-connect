@@ -13,7 +13,6 @@ function Sidebar() {
     { icon: "☁️", name: "Weather", path: "/weather" },
   ];
 
-  // Check if current path matches menu item
   const isActive = (path) => {
     return location.pathname === path;
   };

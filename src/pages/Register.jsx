@@ -25,7 +25,6 @@ function Register() {
     e.preventDefault();
     setError("");
 
-    // Validation
     if (!formData.name || !formData.email || !formData.password) {
       setError("Please fill in all fields");
       return;
@@ -43,9 +42,8 @@ function Register() {
 
     setLoading(true);
 
-    // Simulate registration
     setTimeout(() => {
-      // Redirect to login
+
       navigate("/login");
       setLoading(false);
     }, 1000);
@@ -54,14 +52,12 @@ function Register() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
       <div className="max-w-md w-full">
-        {/* Logo */}
         <div className="text-center mb-8">
           <Link to="/" className="text-4xl font-bold text-primary">
-            🌱 AgriConnect
+            Agritech Connect
           </Link>
         </div>
 
-        {/* Register Form */}
         <div className="bg-white rounded-xl shadow-lg p-8">
           <h2 className="text-2xl font-bold text-center mb-8">Create Account</h2>
 
@@ -109,7 +105,7 @@ function Register() {
                 <option value="livestock">Livestock</option>
                 <option value="mixed">Mixed Farming</option>
                 <option value="organic">Organic Farming</option>
-                <option value="other">Other</option>
+                <option value="other">Agritech Agent</option>
               </select>
             </div>
 
