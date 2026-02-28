@@ -90,8 +90,7 @@ function CropDiagnosis() {
                       setPreview(null);
                       setDiagnosis(null);
                     }}
-                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full w-8 h-8 flex items-center justify-center"
-                  >
+                    className="absolute top-2 right-2 bg-red-500 text-white p-1 rounded-full w-8 h-8 flex items-center justify-center">
                     ✕
                   </button>
                 </div>

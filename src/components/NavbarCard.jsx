@@ -15,7 +15,7 @@ function NavbarCard({ user, onLogout }) {
         className="flex items-center space-x-2 bg-white text-primary px-3 py-1 rounded-lg"
       >
         <span className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center">
-          {user.name ? user.name.charAt(0) : "U"}
+          {user.name ? user.name.charAt(0) : ""}
         </span>
         <span className="hidden md:inline">{user.name || "User"}</span>
       </button>
@@ -25,8 +25,7 @@ function NavbarCard({ user, onLogout }) {
           <Link
             to="/profile"
             className="block px-4 py-2 hover:bg-gray-100"
-            onClick={() => setShowMenu(false)}
-          >
+            onClick={() => setShowMenu(false)}>
             Profile
           </Link>
           <Link
