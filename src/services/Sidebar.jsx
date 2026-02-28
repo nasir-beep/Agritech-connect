@@ -4,13 +4,13 @@ function Sidebar() {
   const location = useLocation();
 
   const menuItems = [
-    { icon: "🏠", name: "Dashboard", path: "/" },
-    { icon: "🛒", name: "Marketplace", path: "/marketplace" },
-    { icon: "📚", name: "Learning", path: "/learning" },
-    { icon: "🔍", name: "Crop Diagnosis", path: "/crop-diagnosis" },
-    { icon: "👥", name: "Mentorship", path: "/mentorship" },
-    { icon: "💬", name: "Community", path: "/community" },
-    { icon: "☁️", name: "Weather", path: "/weather" },
+    { name: "Dashboard", path: "/" },
+    { name: "Marketplace", path: "/marketplace" },
+    { name: "Learning", path: "/learning" },
+    { name: "Crop Diagnosis", path: "/crop-diagnosis" },
+    { name: "Mentorship", path: "/mentorship" },
+    { name: "Community", path: "/community" },
+    { name: "Weather", path: "/weather" },
   ];
 
   const isActive = (path) => {

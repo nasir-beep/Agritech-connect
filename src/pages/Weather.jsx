@@ -17,7 +17,6 @@ export default function Weather() {
           Real-time weather data for farmers. Plan your farming activities with accurate forecasts.
         </p>
 
-        {/* City Selector */}
         <div className="mb-8">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Select City:
@@ -35,16 +34,14 @@ export default function Weather() {
           </select>
         </div>
 
-        {/* Weather Display */}
         <div className="max-w-2xl mx-auto">
           <WeatherCard key={selectedCity} city={selectedCity} />
         </div>
 
-        {/* Farming Tips based on weather */}
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <div className="bg-green-50 rounded-lg p-6">
             <h2 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-2xl mr-2">🌱</span>
+              <span className="text-2xl mr-2"></span>
               Weather-Based Farming Tips
             </h2>
             <ul className="space-y-3 text-gray-700">
@@ -69,7 +66,7 @@ export default function Weather() {
 
           <div className="bg-blue-50 rounded-lg p-6">
             <h2 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-2xl mr-2">⚠️</span>
+              <span className="text-2xl mr-2"></span>
               Weather Alerts
             </h2>
             <p className="text-gray-700 mb-4">
@@ -77,15 +74,15 @@ export default function Weather() {
             </p>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center text-orange-600">
-                <span className="mr-2">🌡️</span>
+                <span className="mr-2">*</span>
                 Heat wave precautions for crops
               </li>
               <li className="flex items-center text-blue-600">
-                <span className="mr-2">💧</span>
+                <span className="mr-2">*</span>
                 Heavy rain flood prevention
               </li>
               <li className="flex items-center text-gray-600">
-                <span className="mr-2">💨</span>
+                <span className="mr-2">*</span>
                 Strong wind damage prevention
               </li>
             </ul>

@@ -118,7 +118,7 @@ export default function WeatherCard({ city = "Benoni" }) {
         </div>
 
         <div className="text-center">
-          <div className="text-6xl mb-4">☀️</div>
+          <div className="text-6xl mb-4"></div>
           <p className="text-4xl font-bold text-primary mb-2">24°C</p>
           <p className="text-gray-600 mb-4">Sunny</p>
           <p className="text-sm text-gray-500">Benoni, South Africa</p>
@@ -128,7 +128,7 @@ export default function WeatherCard({ city = "Benoni" }) {
           {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, i) => (
             <div key={i} className="text-center">
               <p className="text-sm font-semibold">{day}</p>
-              <p className="text-xl">☀️</p>
+              <p className="text-xl"></p>
               <p className="text-sm">{22 + i}°</p>
             </div>
           ))}
@@ -149,7 +149,7 @@ export default function WeatherCard({ city = "Benoni" }) {
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-lg font-bold flex items-center">
-            <span className="mr-2">📍</span>
+            <span className="mr-2"></span>
             {weather.name}, {weather.sys.country}
           </h3>
           {lastUpdated && (
@@ -159,12 +159,7 @@ export default function WeatherCard({ city = "Benoni" }) {
           )}
         </div>
         <button
-          onClick={() => usingLocation ? getLocationWeather() : fetchWeatherData(weather.name)}
-          className="text-primary hover:text-green-700"
-          title="Refresh"
-        >
-          🔄
-        </button>
+          onClick={() => usingLocation ? getLocationWeather() : fetchWeatherData(weather.name)} className="text-primary hover:text-green-700" title="Refresh">🔄</button>
       </div>
 
       <form onSubmit={handleSearch} className="mb-6">
@@ -199,10 +194,7 @@ export default function WeatherCard({ city = "Benoni" }) {
           ))}
           <button
             onClick={getLocationWeather}
-            className="text-xs bg-primary text-white px-2 py-1 rounded hover:bg-green-700"
-          >
-            📍 My Location
-          </button>
+            className="text-xs bg-primary text-white px-2 py-1 rounded hover:bg-green-700">My Location</button>
         </div>
       </div>
 
@@ -226,7 +218,7 @@ export default function WeatherCard({ city = "Benoni" }) {
           />
         </div>
       </div>
-      
+
       <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
         <div className="bg-gray-50 p-3 rounded-lg">
           <p className="text-gray-500">Humidity</p>
@@ -248,7 +240,6 @@ export default function WeatherCard({ city = "Benoni" }) {
         </div>
       </div>
 
-      {/* 5-Day Forecast */}
       {forecast.length > 0 && (
         <div className="border-t pt-4">
           <p className="font-semibold mb-3">5-Day Forecast</p>
@@ -272,10 +263,9 @@ export default function WeatherCard({ city = "Benoni" }) {
         </div>
       )}
 
-      {/* Sun times */}
       <div className="flex justify-between text-xs text-gray-500 mt-4 pt-4 border-t">
-        <div>🌅 Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}</div>
-        <div>🌇 Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}</div>
+        <div>Sunrise: {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}</div>
+        <div>Sunset: {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}</div>
       </div>
     </div>
   );
